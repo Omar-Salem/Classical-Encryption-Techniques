@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="be6e10a9-c190-4543-9f08-7f5ce89d2423" name="test10@TEST10-PC 2012-06-19 14:10:55" runUser="test10-PC\test10" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="4bb0a581-7075-47b7-ba43-58a6bb142cdb">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="test10_TEST10-PC 2012-06-19 14_10_55">
+      <DeploymentItem filename="C:\Users\test10\Desktop\ClassicalEncryptionTechniques_Code\Services\bin\Debug\Services.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-06-19T14:10:55.2160226+02:00" queuing="2012-06-19T14:10:55.3050277+02:00" start="2012-06-19T14:10:55.3110281+02:00" finish="2012-06-19T14:10:55.5400412+02:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="8" executed="8" passed="7" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="DecryptTest" storage="c:\users\test10\desktop\classicalencryptiontechniques_code\unittests\bin\debug\unittests.dll" id="ba7a8056-5d1b-30ed-0415-42bf2eacea84">
+      <Execution id="c95fdf25-1dfd-410f-afc4-76be2971e590" />
+      <TestMethod codeBase="C:/Users/test10/Desktop/ClassicalEncryptionTechniques_Code/UnitTests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.HillTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DecryptTest" />
+    </UnitTest>
+    <UnitTest name="DecryptTest" storage="c:\users\test10\desktop\classicalencryptiontechniques_code\unittests\bin\debug\unittests.dll" id="8f11df6b-c3eb-6b03-4200-9f4b086ab654">
+      <Execution id="d98e3c84-448b-42a9-9e06-2037fd1b44c7" />
+      <TestMethod codeBase="C:/Users/test10/Desktop/ClassicalEncryptionTechniques_Code/UnitTests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.CeaserTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DecryptTest" />
+    </UnitTest>
+    <UnitTest name="EncryptTest" storage="c:\users\test10\desktop\classicalencryptiontechniques_code\unittests\bin\debug\unittests.dll" id="d8c546af-5f37-7f4c-236f-19392fd050e5">
+      <Execution id="787c9cc9-5ce0-41f3-b956-48882b9856fe" />
+      <TestMethod codeBase="C:/Users/test10/Desktop/ClassicalEncryptionTechniques_Code/UnitTests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.AutoKeyTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EncryptTest" />
+    </UnitTest>
+    <UnitTest name="EncryptTest" storage="c:\users\test10\desktop\classicalencryptiontechniques_code\unittests\bin\debug\unittests.dll" id="e94181de-435f-78ea-f2c0-e5f1a1c90d3c">
+      <Execution id="dff6e820-146d-4ac4-8beb-354bfb1674af" />
+      <TestMethod codeBase="C:/Users/test10/Desktop/ClassicalEncryptionTechniques_Code/UnitTests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.CeaserTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EncryptTest" />
+    </UnitTest>
+    <UnitTest name="EncryptTest" storage="c:\users\test10\desktop\classicalencryptiontechniques_code\unittests\bin\debug\unittests.dll" id="338d153e-d489-1013-4c3b-76121ba93597">
+      <Execution id="34bb176b-601e-496d-a674-5ab883393728" />
+      <TestMethod codeBase="C:/Users/test10/Desktop/ClassicalEncryptionTechniques_Code/UnitTests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.PlayFairTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EncryptTest" />
+    </UnitTest>
+    <UnitTest name="DecryptTest" storage="c:\users\test10\desktop\classicalencryptiontechniques_code\unittests\bin\debug\unittests.dll" id="7eed629f-431a-5d0f-a7a2-31704e7fbfb6">
+      <Execution id="4295be3b-9538-4adc-8a34-124d8bc870d3" />
+      <TestMethod codeBase="C:/Users/test10/Desktop/ClassicalEncryptionTechniques_Code/UnitTests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.PlayFairTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DecryptTest" />
+    </UnitTest>
+    <UnitTest name="DecryptTest" storage="c:\users\test10\desktop\classicalencryptiontechniques_code\unittests\bin\debug\unittests.dll" id="101c9313-fa28-76da-694b-0c0428420f0c">
+      <Execution id="674f556a-61ab-493b-8113-c1938e136205" />
+      <TestMethod codeBase="C:/Users/test10/Desktop/ClassicalEncryptionTechniques_Code/UnitTests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.AutoKeyTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DecryptTest" />
+    </UnitTest>
+    <UnitTest name="EncryptTest" storage="c:\users\test10\desktop\classicalencryptiontechniques_code\unittests\bin\debug\unittests.dll" id="00bd19a4-499e-8047-b353-4a3acceeda18">
+      <Execution id="9fa42f53-8c4c-40a8-8b5d-4c6243442dd0" />
+      <TestMethod codeBase="C:/Users/test10/Desktop/ClassicalEncryptionTechniques_Code/UnitTests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.HillTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EncryptTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="00bd19a4-499e-8047-b353-4a3acceeda18" executionId="9fa42f53-8c4c-40a8-8b5d-4c6243442dd0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="101c9313-fa28-76da-694b-0c0428420f0c" executionId="674f556a-61ab-493b-8113-c1938e136205" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="338d153e-d489-1013-4c3b-76121ba93597" executionId="34bb176b-601e-496d-a674-5ab883393728" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7eed629f-431a-5d0f-a7a2-31704e7fbfb6" executionId="4295be3b-9538-4adc-8a34-124d8bc870d3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8f11df6b-c3eb-6b03-4200-9f4b086ab654" executionId="d98e3c84-448b-42a9-9e06-2037fd1b44c7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ba7a8056-5d1b-30ed-0415-42bf2eacea84" executionId="c95fdf25-1dfd-410f-afc4-76be2971e590" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d8c546af-5f37-7f4c-236f-19392fd050e5" executionId="787c9cc9-5ce0-41f3-b956-48882b9856fe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e94181de-435f-78ea-f2c0-e5f1a1c90d3c" executionId="dff6e820-146d-4ac4-8beb-354bfb1674af" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9fa42f53-8c4c-40a8-8b5d-4c6243442dd0" testId="00bd19a4-499e-8047-b353-4a3acceeda18" testName="EncryptTest" computerName="TEST10-PC" duration="00:00:00.0195221" startTime="2012-06-19T14:10:55.3120281+02:00" endTime="2012-06-19T14:10:55.4860381+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9fa42f53-8c4c-40a8-8b5d-4c6243442dd0">
+    </UnitTestResult>
+    <UnitTestResult executionId="674f556a-61ab-493b-8113-c1938e136205" testId="101c9313-fa28-76da-694b-0c0428420f0c" testName="DecryptTest" computerName="TEST10-PC" duration="00:00:00.0012186" startTime="2012-06-19T14:10:55.4870381+02:00" endTime="2012-06-19T14:10:55.4910384+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="674f556a-61ab-493b-8113-c1938e136205">
+    </UnitTestResult>
+    <UnitTestResult executionId="34bb176b-601e-496d-a674-5ab883393728" testId="338d153e-d489-1013-4c3b-76121ba93597" testName="EncryptTest" computerName="TEST10-PC" duration="00:00:00.0028759" startTime="2012-06-19T14:10:55.4910384+02:00" endTime="2012-06-19T14:10:55.4960387+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="34bb176b-601e-496d-a674-5ab883393728">
+    </UnitTestResult>
+    <UnitTestResult executionId="4295be3b-9538-4adc-8a34-124d8bc870d3" testId="7eed629f-431a-5d0f-a7a2-31704e7fbfb6" testName="DecryptTest" computerName="TEST10-PC" duration="00:00:00.0149990" startTime="2012-06-19T14:10:55.4970387+02:00" endTime="2012-06-19T14:10:55.5140397+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4295be3b-9538-4adc-8a34-124d8bc870d3">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;hidethegoldinthetreestump&gt;. Actual:&lt;hidethegoldinthetrexexnvteym&gt;. </Message>
+          <StackTrace>   at UnitTests.PlayFairTest.DecryptTest() in C:\Users\test10\Desktop\ClassicalEncryptionTechniques_Code\UnitTests\ServicesTest\PlayFairTest.cs:line 41
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d98e3c84-448b-42a9-9e06-2037fd1b44c7" testId="8f11df6b-c3eb-6b03-4200-9f4b086ab654" testName="DecryptTest" computerName="TEST10-PC" duration="00:00:00.0008446" startTime="2012-06-19T14:10:55.5150397+02:00" endTime="2012-06-19T14:10:55.5180399+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d98e3c84-448b-42a9-9e06-2037fd1b44c7">
+    </UnitTestResult>
+    <UnitTestResult executionId="c95fdf25-1dfd-410f-afc4-76be2971e590" testId="ba7a8056-5d1b-30ed-0415-42bf2eacea84" testName="DecryptTest" computerName="TEST10-PC" duration="00:00:00.0027678" startTime="2012-06-19T14:10:55.5190400+02:00" endTime="2012-06-19T14:10:55.5240403+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c95fdf25-1dfd-410f-afc4-76be2971e590">
+    </UnitTestResult>
+    <UnitTestResult executionId="787c9cc9-5ce0-41f3-b956-48882b9856fe" testId="d8c546af-5f37-7f4c-236f-19392fd050e5" testName="EncryptTest" computerName="TEST10-PC" duration="00:00:00.0003171" startTime="2012-06-19T14:10:55.5240403+02:00" endTime="2012-06-19T14:10:55.5270404+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="787c9cc9-5ce0-41f3-b956-48882b9856fe">
+    </UnitTestResult>
+    <UnitTestResult executionId="dff6e820-146d-4ac4-8beb-354bfb1674af" testId="e94181de-435f-78ea-f2c0-e5f1a1c90d3c" testName="EncryptTest" computerName="TEST10-PC" duration="00:00:00.0003214" startTime="2012-06-19T14:10:55.5270404+02:00" endTime="2012-06-19T14:10:55.5300406+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dff6e820-146d-4ac4-8beb-354bfb1674af">
+    </UnitTestResult>
+  </Results>
+</TestRun>

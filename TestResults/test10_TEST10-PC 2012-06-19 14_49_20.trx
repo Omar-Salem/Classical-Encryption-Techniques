@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="ea367d3f-59be-491f-b4cc-abacdd1f1828" name="test10@TEST10-PC 2012-06-19 14:49:20" runUser="test10-PC\test10" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="4bb0a581-7075-47b7-ba43-58a6bb142cdb">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment userDeploymentRoot="C:\Users\test10\Desktop\ClassicalEncryptionTechniques_Code\TestResults" useDefaultDeploymentRoot="false" enabled="false" runDeploymentRoot="test10_TEST10-PC 2012-06-19 14_49_20">
+      <DeploymentItem filename="C:\Users\test10\Desktop\ClassicalEncryptionTechniques_Code\Services\bin\Debug\Services.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-06-19T14:49:20.8288962+02:00" queuing="2012-06-19T14:49:20.8969000+02:00" start="2012-06-19T14:49:20.9019003+02:00" finish="2012-06-19T14:49:21.0819106+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="EncryptTest" storage="c:\users\test10\desktop\classicalencryptiontechniques_code\unittests\bin\debug\unittests.dll" id="c2942ac1-ff15-7433-d8a2-0eec2b706f3f">
+      <Execution id="c7125399-3d40-4b1a-a25b-0d62980dbbdc" />
+      <TestMethod codeBase="C:/Users/test10/Desktop/ClassicalEncryptionTechniques_Code/UnitTests/bin/Debug/UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTests.VigenereTest, UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EncryptTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="c2942ac1-ff15-7433-d8a2-0eec2b706f3f" executionId="c7125399-3d40-4b1a-a25b-0d62980dbbdc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="c7125399-3d40-4b1a-a25b-0d62980dbbdc" testId="c2942ac1-ff15-7433-d8a2-0eec2b706f3f" testName="EncryptTest" computerName="TEST10-PC" duration="00:00:00.0154472" startTime="2012-06-19T14:49:20.9029004+02:00" endTime="2012-06-19T14:49:21.0709100+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c7125399-3d40-4b1a-a25b-0d62980dbbdc">
+    </UnitTestResult>
+  </Results>
+</TestRun>

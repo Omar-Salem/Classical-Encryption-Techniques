@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassicalEncryptionTechniques", "ClassicalEncryptionTechniques\ClassicalEncryptionTechniques.csproj", "{53FF6CE8-993F-40E3-A8F2-3A23769C0A1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{175CB11B-9424-4ED6-87A3-34361ED4FDB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{5BDC625E-A1B3-4082-8E80-ECA8A96AC511}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{18E201C9-A17D-4866-BF29-280DE6188538}"
+	ProjectSection(SolutionItems) = preProject
+		ClassicalEncryptionTechniques.vsmdi = ClassicalEncryptionTechniques.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = ClassicalEncryptionTechniques.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53FF6CE8-993F-40E3-A8F2-3A23769C0A1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53FF6CE8-993F-40E3-A8F2-3A23769C0A1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53FF6CE8-993F-40E3-A8F2-3A23769C0A1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53FF6CE8-993F-40E3-A8F2-3A23769C0A1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{175CB11B-9424-4ED6-87A3-34361ED4FDB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{175CB11B-9424-4ED6-87A3-34361ED4FDB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{175CB11B-9424-4ED6-87A3-34361ED4FDB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{175CB11B-9424-4ED6-87A3-34361ED4FDB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BDC625E-A1B3-4082-8E80-ECA8A96AC511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BDC625E-A1B3-4082-8E80-ECA8A96AC511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BDC625E-A1B3-4082-8E80-ECA8A96AC511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BDC625E-A1B3-4082-8E80-ECA8A96AC511}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
