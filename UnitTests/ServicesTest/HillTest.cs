@@ -1,4 +1,4 @@
-﻿using Services;
+﻿using EncryptionAlgorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
@@ -8,6 +8,7 @@ namespace UnitTests
     public class HillTest
     {
         readonly int[,] matrix;
+        readonly SecurityAlgorithm _target;
 
         public HillTest()
         {
@@ -24,35 +25,33 @@ namespace UnitTests
             matrix[2, 0] = 5;
             matrix[2, 1] = 21;
             matrix[2, 2] = 19;
+
+            _target = new Hill(matrix);
         }
 
         [TestMethod()]
-        public void EncryptTest()
+        public void Hill_EncryptTest()
         {
             //Arrange
-            ISecurity target = new Hill();
             string plain = "paymoremoney";
-            object[] param = new object[2] { matrix, 3 };
             string cypher = "lnshdlewmtrw";
 
             //Act
-            string actual = target.Encrypt(plain, param);
+            string actual = _target.Encrypt(plain);
 
             //Assert
             Assert.AreEqual(cypher, actual);
         }
 
         [TestMethod()]
-        public void DecryptTest()
+        public void Hill_DecryptTest()
         {
             //Arrange
-            ISecurity target = new Hill();
             string plain = "paymoremoney";
-            object[] param = new object[2] { matrix, 3 };
             string cypher = "lnshdlewmtrw";
 
             //Act
-            string actual = target.Decrypt(cypher, param);
+            string actual = _target.Decrypt(cypher);
 
             //Assert
             Assert.AreEqual(plain, actual);

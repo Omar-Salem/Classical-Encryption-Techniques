@@ -1,4 +1,4 @@
-﻿using Services;
+﻿using EncryptionAlgorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
@@ -8,32 +8,30 @@ namespace UnitTests
     public class AutoKeyTest
     {
         [TestMethod()]
-        public void EncryptTest()
+        public void AutoKey_EncryptTest()
         {
             //Arrange
-            ISecurity target = new AutoKey();
+            SecurityAlgorithm target = new AutoKey("deceptive");
             string plain = "wearediscoveredsaveyourself";
-            object[] param = new object[1] { "deceptive" };
             string cypher = "zicvtwqngkzeiigasxstslvvwla";
 
             //Act
-            string actual = target.Encrypt(plain, param);
+            string actual = target.Encrypt(plain);
 
             //Assert
             Assert.AreEqual(cypher, actual);
         }
 
         [TestMethod()]
-        public void DecryptTest()
+        public void AutoKey_DecryptTest()
         {
             //Arrange
-            ISecurity target = new AutoKey();
+            SecurityAlgorithm target = new AutoKey("deceptivewearediscoveredsav");
             string plain = "wearediscoveredsaveyourself";
-            object[] param = new object[1] { "deceptivewearediscoveredsav" };
             string cypher = "zicvtwqngkzeiigasxstslvvwla";
 
             //Act
-            string actual = target.Decrypt(cypher, param);
+            string actual = target.Decrypt(cypher);
 
             //Assert
             Assert.AreEqual(plain, actual);

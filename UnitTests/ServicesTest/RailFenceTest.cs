@@ -1,45 +1,42 @@
-﻿using Services;
+﻿using EncryptionAlgorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace UnitTests
 {
-    
-    
-    /// <summary>
-    ///This is a test class for RailFenceTest and is intended
-    ///to contain all RailFenceTest Unit Tests
-    ///</summary>
     [TestClass()]
     public class RailFenceTest
     {
+        readonly SecurityAlgorithm _target;
+
+        public RailFenceTest()
+        {
+            _target = new RailFence(2);
+        }
+
         [TestMethod()]
-        public void EncryptTest()
+        public void RailFence_EncryptTest()
         {
             //Arrange
-            ISecurity target = new RailFence();
             string plain = "meetmeafterthegraduationparty";
-            object[] param = new object[1] { 2 };
             string cypher = "mematrhgautopryetefeterdainat*";
 
             //Act
-            string actual = target.Encrypt(plain, param);
+            string actual = _target.Encrypt(plain);
 
             //Assert
             Assert.AreEqual(cypher, actual);
         }
 
         [TestMethod()]
-        public void DecryptTest()
+        public void RailFence_DecryptTest()
         {
             //Arrange
-            ISecurity target = new RailFence();
             string plain = "meetmeafterthegraduationparty*";
-            object[] param = new object[1] { 2 };
             string cypher = "mematrhgautopryetefeterdainat*";
 
             //Act
-            string actual = target.Decrypt(cypher, param);
+            string actual = _target.Decrypt(cypher);
 
             //Assert
             Assert.AreEqual(plain, actual);

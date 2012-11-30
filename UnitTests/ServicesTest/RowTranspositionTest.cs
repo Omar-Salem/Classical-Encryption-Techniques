@@ -1,4 +1,4 @@
-﻿using Services;
+﻿using EncryptionAlgorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
@@ -7,33 +7,36 @@ namespace UnitTests
     [TestClass()]
     public class RowTranspositionTest
     {
+        readonly SecurityAlgorithm _target;
+
+        public RowTranspositionTest()
+        {
+            _target = new RowTransposition(new int[] { 4, 3, 1, 2, 5, 6, 7 });
+        }
+
         [TestMethod()]
-        public void EncryptTest()
+        public void RowTransposition_EncryptTest()
         {
             //Arrange
-            ISecurity target = new RowTransposition();
             string plain = "attackpostponeduntiltwoam";
-            object[] param = new object[1] { "4,3,1,2,5,6,7" };
             string cypher = "ttna aptm tsuo aodw coi* knl* pet* ";
 
             //Act
-            string actual = target.Encrypt(plain, param);
+            string actual = _target.Encrypt(plain);
 
             //Assert
             Assert.AreEqual(cypher, actual);
         }
 
         [TestMethod()]
-        public void DecryptTest()
+        public void RowTransposition_DecryptTest()
         {
             //Arrange
-            ISecurity target = new RowTransposition();
             string plain = "attackpostponeduntiltwoam";
-            object[] param = new object[1] { "4,3,1,2,5,6,7" };
             string cypher = "ttna aptm tsuo aodw coi* knl* pet* ";
 
             //Act
-            string actual = target.Decrypt(cypher, param);
+            string actual = _target.Decrypt(cypher);
 
             //Assert
             Assert.AreEqual(plain, actual);

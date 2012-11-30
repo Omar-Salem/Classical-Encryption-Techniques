@@ -1,0 +1,5 @@
+D:\Git\ClassicalEncryptionTechniques_Code\Services\bin\Debug\Services.dll
+D:\Git\ClassicalEncryptionTechniques_Code\Services\bin\Debug\Services.pdb
+D:\Git\ClassicalEncryptionTechniques_Code\Services\obj\Debug\ResolveAssemblyReference.cache
+D:\Git\ClassicalEncryptionTechniques_Code\Services\obj\Debug\Services.dll
+D:\Git\ClassicalEncryptionTechniques_Code\Services\obj\Debug\Services.pdb

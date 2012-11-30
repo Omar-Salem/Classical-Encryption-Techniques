@@ -60,7 +60,7 @@
     <Compile Include="ServicesTest\VigenereTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Services\Services.csproj">
+    <ProjectReference Include="..\EncryptionAlgorithms\EncryptionAlgorithms.csproj">
       <Project>{175CB11B-9424-4ED6-87A3-34361ED4FDB4}</Project>
       <Name>Services</Name>
     </ProjectReference>

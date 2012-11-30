@@ -1,4 +1,4 @@
-﻿using Services;
+﻿using EncryptionAlgorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
@@ -8,32 +8,30 @@ namespace UnitTests
     public class VigenereTest
     {
         [TestMethod()]
-        public void EncryptTest()
+        public void Vigenere_EncryptTest()
         {
             //Arrange
-            ISecurity target = new Vigenere();
+            SecurityAlgorithm target = new Vigenere("lemon");
             string plain = "attackatdawn";
-            object[] param = new object[1] { "lemon" };
             string cypher = "lxfopvefrnhr";
 
             //Act
-            string actual = target.Encrypt(plain, param);
+            string actual = target.Encrypt(plain);
 
             //Assert
             Assert.AreEqual(cypher, actual);
         }
 
         [TestMethod()]
-        public void DecryptTest()
+        public void Vigenere_DecryptTest()
         {
             //Arrange
-            ISecurity target = new Vigenere();
+            SecurityAlgorithm target = new Vigenere("lemon");
             string plain = "attackatdawn";
-            object[] param = new object[1] { "lemon" };
             string cypher = "lxfopvefrnhr";
 
             //Act
-            string actual = target.Decrypt(cypher, param);
+            string actual = target.Decrypt(cypher);
 
             //Assert
             Assert.AreEqual(plain, actual);

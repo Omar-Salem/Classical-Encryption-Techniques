@@ -1,0 +1,14 @@
+D:\Git\ClassicalEncryptionTechniques_Code\Client\bin\Debug\ClassicalEncryptionTechniques.exe.config
+D:\Git\ClassicalEncryptionTechniques_Code\Client\bin\Debug\ClassicalEncryptionTechniques.exe
+D:\Git\ClassicalEncryptionTechniques_Code\Client\bin\Debug\ClassicalEncryptionTechniques.pdb
+D:\Git\ClassicalEncryptionTechniques_Code\Client\bin\Debug\Services.dll
+D:\Git\ClassicalEncryptionTechniques_Code\Client\bin\Debug\Services.pdb
+D:\Git\ClassicalEncryptionTechniques_Code\Client\obj\Debug\ResolveAssemblyReference.cache
+D:\Git\ClassicalEncryptionTechniques_Code\Client\obj\Debug\Services.Properties.Resources.resources
+D:\Git\ClassicalEncryptionTechniques_Code\Client\obj\Debug\GenerateResource.read.1.tlog
+D:\Git\ClassicalEncryptionTechniques_Code\Client\obj\Debug\GenerateResource.write.1.tlog
+D:\Git\ClassicalEncryptionTechniques_Code\Client\obj\Debug\ClassicalEncryptionTechniques.exe
+D:\Git\ClassicalEncryptionTechniques_Code\Client\obj\Debug\ClassicalEncryptionTechniques.pdb
+D:\Git\ClassicalEncryptionTechniques_Code\Client\obj\Debug\EncryptionAlgorithms.frmEXTENDED_EUCLID.resources
+D:\Git\ClassicalEncryptionTechniques_Code\Client\obj\Debug\EncryptionAlgorithms.frmMain.resources
+D:\Git\ClassicalEncryptionTechniques_Code\Client\obj\Debug\EncryptionAlgorithms.frmMatrix.resources

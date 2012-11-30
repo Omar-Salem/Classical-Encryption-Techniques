@@ -1,0 +1,7 @@
+D:\Git\ClassicalEncryptionTechniques_Code\UnitTests\bin\Debug\UnitTests.dll
+D:\Git\ClassicalEncryptionTechniques_Code\UnitTests\bin\Debug\UnitTests.pdb
+D:\Git\ClassicalEncryptionTechniques_Code\UnitTests\obj\Debug\ResolveAssemblyReference.cache
+D:\Git\ClassicalEncryptionTechniques_Code\UnitTests\obj\Debug\UnitTests.dll
+D:\Git\ClassicalEncryptionTechniques_Code\UnitTests\obj\Debug\UnitTests.pdb
+D:\Git\ClassicalEncryptionTechniques_Code\UnitTests\bin\Debug\EncryptionAlgorithms.dll
+D:\Git\ClassicalEncryptionTechniques_Code\UnitTests\bin\Debug\EncryptionAlgorithms.pdb

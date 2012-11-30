@@ -1,0 +1,43 @@
+﻿<Window x:Class="WpfUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:WpfUI="clr-namespace:WpfUI"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="Encryption Algorithms" Height="auto" Width="525" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Window.Resources>
+    <StackPanel >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+
+            <Label Content="Algorithm"  Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
+            <Label Content="Message"  Grid.Row="1" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
+            <Label Content="Key"  Grid.Row="2" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
+            <Label Content="Processed Message"  Grid.Row="3" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
+
+            <ComboBox Height="23" Grid.Column="1" HorizontalAlignment="Left"  Margin="10,10,0,0"  VerticalAlignment="Top" Width="120" ItemsSource="{Binding Path=AlgorithmsNames}" SelectedIndex="0" SelectedValue="{Binding Path=SelectedAlgorithmName}" />
+            <TextBox Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="10,14,0,0"  VerticalAlignment="Top" Width="176" TextWrapping="WrapWithOverflow" Text="{Binding Path=Message}" />
+            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="2">
+                <TextBox  Grid.RowSpan="2" Height="23" Margin="10,10,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" Text="{Binding Path=SelectedAlgorithm.StringKey}" Visibility="{Binding Path=SelectedAlgorithm.StringKeyVisible, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                <xctk:IntegerUpDown Margin="10,10,0,0" Visibility="{Binding Path=SelectedAlgorithm.NumericKeyVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Value="{Binding Path=SelectedAlgorithm.NumericKey}" />
+                <Button Content="Enter Matrix" Height="23" Width="75" Visibility="{Binding Path=SelectedAlgorithm.MatrixKeyVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Command="{Binding Path=ShowMatrixForm}" />
+            </StackPanel>
+            <TextBox Grid.Column="1" Grid.Row="3" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" Text="{Binding Path=ProcessedMessage}" />
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Encrypt" Height="23" Name="button1" Width="75" Command="{Binding Path=Encrypt}" />
+            <Button Content="Decrypt" Height="23" Name="button2" Width="75" Command="{Binding Path=Decrypt}" />
+        </StackPanel>
+    </StackPanel>
+</Window>

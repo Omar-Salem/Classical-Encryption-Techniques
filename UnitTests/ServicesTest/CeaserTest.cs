@@ -1,45 +1,42 @@
-﻿using Services;
+﻿using EncryptionAlgorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace UnitTests
 {
-    
-    
-    /// <summary>
-    ///This is a test class for CeaserTest and is intended
-    ///to contain all CeaserTest Unit Tests
-    ///</summary>
     [TestClass()]
     public class CeaserTest
     {
+        readonly SecurityAlgorithm _target;
+
+        public CeaserTest()
+        {
+            _target = new Ceaser(3);
+        }
+
         [TestMethod()]
-        public void EncryptTest()
+        public void Ceaser_EncryptTest()
         {
             //Arrange
-            ISecurity target = new Ceaser();
             string plain = "meetmeafterthetogaparty";
-            object[] param = new object[1] { 3 };
             string cypher = "phhwphdiwhuwkhwrjdsduwb";
 
             //Act
-            string actual = target.Encrypt(plain, param);
+            string actual = _target.Encrypt(plain);
 
             //Assert
             Assert.AreEqual(cypher, actual);
         }
 
         [TestMethod()]
-        public void DecryptTest()
+        public void Ceaser_DecryptTest()
         {
             //Arrange
-            ISecurity target = new Ceaser();
             string plain = "meetmeafterthetogaparty";
-            object[] param = new object[1] { 3 };
             string cypher = "phhwphdiwhuwkhwrjdsduwb";
 
             //Act
-            string actual = target.Decrypt(cypher, param);
+            string actual = _target.Decrypt(cypher);
 
             //Assert
             Assert.AreEqual(plain, actual);

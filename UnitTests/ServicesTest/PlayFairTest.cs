@@ -1,4 +1,4 @@
-﻿using Services;
+﻿using EncryptionAlgorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
@@ -7,35 +7,38 @@ namespace UnitTests
     [TestClass()]
     public class PlayFairTest
     {
+        readonly SecurityAlgorithm _target;
+
+        public PlayFairTest()
+        {
+            _target = new PlayFair("playfairexample");
+        }
+
         [TestMethod()]
-        public void EncryptTest()
+        public void PlayFair_EncryptTest()
         {
 
             //Arrange
-            ISecurity target = new PlayFair();
             string plain = "hidethegoldinthetreestump";
-            object[] param = new object[1] { "playfairexample" };
             string cypher = "bmodzbxdnabekudmuixmmouvif";
 
             //Act
-            string actual = target.Encrypt(plain, param);
+            string actual = _target.Encrypt(plain);
 
             //Assert
             Assert.AreEqual(cypher, actual);
         }
 
         [TestMethod()]
-        public void DecryptTest()
+        public void PlayFair_DecryptTest()
         {
 
             //Arrange
-            ISecurity target = new PlayFair();
             string plain = "hidethegoldinthetrexestump";
-            object[] param = new object[1] { "playfairexample" };
             string cypher = "bmodzbxdnabekudmuixmmouvif";
 
             //Act
-            string actual = target.Decrypt(cypher, param);
+            string actual = _target.Decrypt(cypher);
 
             //Assert
             Assert.AreEqual(plain, actual);

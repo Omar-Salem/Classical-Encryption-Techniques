@@ -1,0 +1,12 @@
+﻿<Window x:Class="WpfUI.MatrixKey"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Matrix Key" Height="auto" Width="auto" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Closing="Window_Closing">
+    <StackPanel Width="auto">
+        <DataGrid
+                 ItemsSource="{Binding Matrix,
+                        Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}" Width="auto" Height="auto" HeadersVisibility="None" />
+        <Button Content="Submit" Height="23"  Width="75" IsDefault="True" />
+    </StackPanel>
+</Window>
