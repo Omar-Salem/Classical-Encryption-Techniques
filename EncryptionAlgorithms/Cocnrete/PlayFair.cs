@@ -7,6 +7,7 @@
     public class PlayFair : SecurityAlgorithm
     {
         string key;
+
         public PlayFair(string key)
         {
             this.key = key;
@@ -30,8 +31,6 @@
 
         private string Process(string message, Mode mode)
         {
-            List<char> lstKey = new List<char>();
-
             //Key:Charcater
             //Value:Position
             Dictionary<char, string> characterPositionsInMatrix = new Dictionary<char, string>();
@@ -40,144 +39,144 @@
             //Value:Charcater
             Dictionary<string, char> positionCharacterInMatrix = new Dictionary<string, char>();
 
+            FillMatrix(key.Distinct().ToArray(), characterPositionsInMatrix, positionCharacterInMatrix);
 
-            foreach (char c in key.ToLower().Trim())//get key..remove duplicates
-            {
-                if (!lstKey.Contains(c) && c != ' ')
-                {
-                    lstKey.Add(c);
-                }
-            }
-            FillMatrix(lstKey, ref characterPositionsInMatrix, ref positionCharacterInMatrix);
             if (mode == Mode.Encrypt)
             {
                 message = RepairWord(message);
             }
-            ////////////////////////////////////////////////
-            string strReturn = "";
+
+            string result = "";
+
             for (int i = 0; i < message.Length; i += 2)
             {
                 string substring_of_2 = message.Substring(i, 2);//get characters from text by pairs
                 //get Row & Column of each character
-                string strR_C_1 = characterPositionsInMatrix[substring_of_2[0]];
-                string strR_C_2 = characterPositionsInMatrix[substring_of_2[1]];
+                string rc1 = characterPositionsInMatrix[substring_of_2[0]];
+                string rc2 = characterPositionsInMatrix[substring_of_2[1]];
 
-                if (strR_C_1[0] == strR_C_2[0])//Same Row, different Column
+                if (rc1[0] == rc2[0])//Same Row, different Column
                 {
-                    int nNew_C1 = 0, nNew_C2 = 0;
+                    int newC1 = 0, newC2 = 0;
 
                     switch (mode)
                     {
                         case Mode.Encrypt://Increment Columns
-                            nNew_C1 = (int.Parse(strR_C_1[1].ToString()) + 1) % 5;
-                            nNew_C2 = (int.Parse(strR_C_2[1].ToString()) + 1) % 5;
+                            newC1 = (int.Parse(rc1[1].ToString()) + 1) % 5;
+                            newC2 = (int.Parse(rc2[1].ToString()) + 1) % 5;
                             break;
                         case Mode.Decrypt://Decrement Columns
-                            nNew_C1 = (int.Parse(strR_C_1[1].ToString()) - 1) % 5;
-                            nNew_C2 = (int.Parse(strR_C_2[1].ToString()) - 1) % 5;
+                            newC1 = (int.Parse(rc1[1].ToString()) - 1) % 5;
+                            newC2 = (int.Parse(rc2[1].ToString()) - 1) % 5;
                             break;
                     }
 
-                    nNew_C1 = RepairNegative(nNew_C1);
-                    nNew_C2 = RepairNegative(nNew_C2);
-                    strReturn += positionCharacterInMatrix[strR_C_1[0].ToString() + nNew_C1.ToString()];
-                    strReturn += positionCharacterInMatrix[strR_C_2[0].ToString() + nNew_C2.ToString()];
+                    newC1 = RepairNegative(newC1);
+                    newC2 = RepairNegative(newC2);
+
+                    result += positionCharacterInMatrix[rc1[0].ToString() + newC1.ToString()];
+                    result += positionCharacterInMatrix[rc2[0].ToString() + newC2.ToString()];
                 }
 
-                else if (strR_C_1[1] == strR_C_2[1])//Same Column, different Row
+                else if (rc1[1] == rc2[1])//Same Column, different Row
                 {
-                    int nNew_R1 = 0, nNew_R2 = 0;
+                    int newR1 = 0, newR2 = 0;
 
                     switch (mode)
                     {
                         case Mode.Encrypt://Increment Rows
-                            nNew_R1 = (int.Parse(strR_C_1[0].ToString()) + 1) % 5;
-                            nNew_R2 = (int.Parse(strR_C_2[0].ToString()) + 1) % 5;
+                            newR1 = (int.Parse(rc1[0].ToString()) + 1) % 5;
+                            newR2 = (int.Parse(rc2[0].ToString()) + 1) % 5;
                             break;
                         case Mode.Decrypt://Decrement Rows
-                            nNew_R1 = (int.Parse(strR_C_1[0].ToString()) - 1) % 5;
-                            nNew_R2 = (int.Parse(strR_C_2[0].ToString()) - 1) % 5;
+                            newR1 = (int.Parse(rc1[0].ToString()) - 1) % 5;
+                            newR2 = (int.Parse(rc2[0].ToString()) - 1) % 5;
                             break;
                     }
-                    nNew_R1 = RepairNegative(nNew_R1);
-                    nNew_R2 = RepairNegative(nNew_R2);
-                    strReturn += positionCharacterInMatrix[nNew_R1.ToString() + strR_C_1[1].ToString()];
-                    strReturn += positionCharacterInMatrix[nNew_R2.ToString() + strR_C_2[1].ToString()];
+                    newR1 = RepairNegative(newR1);
+                    newR2 = RepairNegative(newR2);
+
+                    result += positionCharacterInMatrix[newR1.ToString() + rc1[1].ToString()];
+                    result += positionCharacterInMatrix[newR2.ToString() + rc2[1].ToString()];
                 }
 
                 else//different Row & Column
                 {
                     //1st character:row of 1st + col of 2nd
                     //2nd character:row of 2nd + col of 1st
-                    strReturn += positionCharacterInMatrix[strR_C_1[0].ToString() + strR_C_2[1].ToString()];
-                    strReturn += positionCharacterInMatrix[strR_C_2[0].ToString() + strR_C_1[1].ToString()];
+                    result += positionCharacterInMatrix[rc1[0].ToString() + rc2[1].ToString()];
+                    result += positionCharacterInMatrix[rc2[0].ToString() + rc1[1].ToString()];
                 }
             }
-            return strReturn;
+
+            return result;
         }
 
         private string RepairWord(string message)
         {
-            string strTrimmed = message.Replace(" ", "");
-            string strReturn = "";
-            for (int i = 0; i < strTrimmed.Length; i++)
+            string trimmed = message.Replace(" ", "");
+            string result = "";
+
+            for (int i = 0; i < trimmed.Length; i++)
             {
-                strReturn += strTrimmed[i];
-                if (i < strTrimmed.Length - 1 && message[i] == message[i + 1]) //check if two consecutive letters are the same
+                result += trimmed[i];
+
+                if (i < trimmed.Length - 1 && message[i] == message[i + 1]) //check if two consecutive letters are the same
                 {
-                    strReturn += 'x';
+                    result += 'x';
                 }
             }
 
-            if (strReturn.Length % 2 != 0)//check if length is even
+            if (result.Length % 2 != 0)//check if length is even
             {
-                strReturn += 'x';
+                result += 'x';
             }
 
-            return strReturn;
+            return result;
         }
 
-        private void FillMatrix(List<char> lstKey, ref Dictionary<char, string> dicCharacter_positions_in_Matrix, ref Dictionary<string, char> dicPosition_Character_in_Matrix)
+        private void FillMatrix(IList<char> key,  Dictionary<char, string> characterPositionsInMatrix,  Dictionary<string, char> positionCharacterInMatrix)
         {
-            char[,] arrMatrix_PF = new char[5, 5];
-            int nKeyPosition = 0, nchar_position = 0;
-            List<char> lstAlphabet_PF = alphabet.Keys.ToList();
-            lstAlphabet_PF.Remove('j');
+            char[,] matrix = new char[5, 5];
+            int keyPosition = 0, charPosition = 0;
+            List<char> alphabetPF = alphabet.Keys.ToList();
+            alphabetPF.Remove('j');
 
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 5; j++)
                 {
-                    if (nchar_position < lstKey.Count)
+                    if (charPosition < key.Count)
                     {
-                        arrMatrix_PF[i, j] = lstKey[nchar_position];//fill matrix with key
-                        lstAlphabet_PF.Remove(lstKey[nchar_position]);
-                        nchar_position++;
+                        matrix[i, j] = key[charPosition];//fill matrix with key
+                        alphabetPF.Remove(key[charPosition]);
+                        charPosition++;
                     }
 
                     else//key finished...fill with rest of alphabet
                     {
-                        arrMatrix_PF[i, j] = lstAlphabet_PF[nKeyPosition];
-                        nKeyPosition++;
+                        matrix[i, j] = alphabetPF[keyPosition];
+                        keyPosition++;
                     }
 
-                    string strPosition = i.ToString() + j.ToString();
+                    string position = i.ToString() + j.ToString();
                     //store character positions in dictionary to avoid searching everytime
-                    dicCharacter_positions_in_Matrix.Add(arrMatrix_PF[i, j], strPosition);
-                    dicPosition_Character_in_Matrix.Add(strPosition, arrMatrix_PF[i, j]);
+                    characterPositionsInMatrix.Add(matrix[i, j], position);
+                    positionCharacterInMatrix.Add(position, matrix[i, j]);
                 }
             }
         }
 
-        private int RepairNegative(int nNumber)
+        private int RepairNegative(int number)
         {
-            if (nNumber < 0)
+            if (number < 0)
             {
-                nNumber += 5;
+                number += 5;
             }
 
-            return nNumber;
+            return number;
         }
+
         #endregion
     }
 }

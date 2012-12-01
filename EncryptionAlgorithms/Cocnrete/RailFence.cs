@@ -32,52 +32,54 @@
         {
             int rows = key;
             int columns = (int)Math.Ceiling((double)message.Length / (double)rows);
-            char[,] result = FillArray(message, rows, columns, mode);
-            string strReturn = "";
+            char[,] matrix = FillArray(message, rows, columns, mode);
+            string result = "";
 
-            foreach (char c in result)
+            foreach (char c in matrix)
             {
-                strReturn += c;
+                result += c;
             }
 
-            return strReturn;
+            return result;
         }
 
-        private char[,] FillArray(string message, int nRows, int nColumns, Mode mode)
+        private char[,] FillArray(string message, int rowsCount, int columnsCount, Mode mode)
         {
             int charPosition = 0;
             int length = 0, width = 0;
-            char[,] arrReturn = new char[nRows, nColumns];
+            char[,] matrix = new char[rowsCount, columnsCount];
+
             switch (mode)
             {
                 case Mode.Encrypt:
-                    length = nRows;
-                    width = nColumns;
+                    length = rowsCount;
+                    width = columnsCount;
                     break;
                 case Mode.Decrypt:
-                    arrReturn = new char[nColumns, nRows];
-                    width = nRows;
-                    length = nColumns;
+                    matrix = new char[columnsCount, rowsCount];
+                    width = rowsCount;
+                    length = columnsCount;
                     break;
             }
+
             for (int i = 0; i < width; i++)
             {
                 for (int j = 0; j < length; j++)
                 {
                     if (charPosition < message.Length)
                     {
-                        arrReturn[j, i] = message[charPosition];
+                        matrix[j, i] = message[charPosition];
                     }
                     else
                     {
-                        arrReturn[j, i] = '*';
+                        matrix[j, i] = '*';
                     }
 
                     charPosition++;
                 }
             }
 
-            return arrReturn;
+            return matrix;
         }
 
         #endregion
