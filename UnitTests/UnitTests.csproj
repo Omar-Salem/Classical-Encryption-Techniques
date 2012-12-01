@@ -50,14 +50,15 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ServicesTest\RailFenceTest.cs" />
-    <Compile Include="ServicesTest\RowTranspositionTest.cs" />
-    <Compile Include="ServicesTest\PlayFairTest.cs" />
-    <Compile Include="ServicesTest\CeaserTest.cs" />
-    <Compile Include="ServicesTest\HillTest.cs" />
-    <Compile Include="ServicesTest\AutoKeyTest.cs" />
+    <Compile Include="Algorithms Tests\MonoalphabeticTest.cs" />
+    <Compile Include="Algorithms Tests\RailFenceTest.cs" />
+    <Compile Include="Algorithms Tests\RowTranspositionTest.cs" />
+    <Compile Include="Algorithms Tests\PlayFairTest.cs" />
+    <Compile Include="Algorithms Tests\CeaserTest.cs" />
+    <Compile Include="Algorithms Tests\HillTest.cs" />
+    <Compile Include="Algorithms Tests\AutoKeyTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServicesTest\VigenereTest.cs" />
+    <Compile Include="Algorithms Tests\VigenereTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EncryptionAlgorithms\EncryptionAlgorithms.csproj">

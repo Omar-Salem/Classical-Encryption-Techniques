@@ -8,13 +8,14 @@
 
     public class Monoalphabetic : SecurityAlgorithm
     {
-        readonly Dictionary<int, char> _alphabetShuffled;
-        readonly Dictionary<char, int> _alphabetRandomReverse;
+        readonly Dictionary<char, char> _alphabetShuffled;
+        readonly Dictionary<char, char> _alphabetShuffledReverse;
 
         public Monoalphabetic()
         {
-            _alphabetRandomReverse = new Dictionary<char, int>();
-            _alphabetShuffled = new Dictionary<int, char>();
+            _alphabetShuffledReverse = new Dictionary<char, char>();
+            _alphabetShuffled = new Dictionary<char, char>();
+            ShuffleAlphabet();
         }
 
         #region Public Methods
@@ -39,8 +40,15 @@
 
             for (int i = 0; i < token.Length; i++)
             {
-                int nchar_position = alphabet[token[i]];
-                result += _alphabetShuffled[nchar_position];
+                switch (mode)
+                {
+                    case Mode.Encrypt:
+                        result += _alphabetShuffled[token[i]];
+                        break;
+                    case Mode.Decrypt:
+                        result += _alphabetShuffledReverse[token[i]];
+                        break;
+                }
             }
 
             return result;
@@ -49,18 +57,15 @@
         private void ShuffleAlphabet()
         {
             Random r = new Random(DateTime.Now.Millisecond);
+            var alphabetCopy = alphabet.Keys.ToList();
 
-            while (_alphabetShuffled.Count != 26)
+            foreach (var character in alphabet.Keys)
             {
-                int characterPosition = r.Next(0, alphabet.Count);
-
-                if (!_alphabetShuffled.Keys.Contains(characterPosition))
-                {
-                    char randomCharacter = alphabet.ElementAt(characterPosition).Key;
-                    _alphabetShuffled.Add(characterPosition, randomCharacter);
-                    _alphabetRandomReverse.Add(randomCharacter, characterPosition);
-                    alphabet.Remove(randomCharacter);
-                }
+                int characterPosition = r.Next(0, alphabetCopy.Count);
+                char randomCharacter = alphabetCopy[characterPosition];
+                _alphabetShuffled.Add(character, randomCharacter);
+                _alphabetShuffledReverse.Add(randomCharacter, character);
+                alphabetCopy.RemoveAt(characterPosition);
             }
         }
 
