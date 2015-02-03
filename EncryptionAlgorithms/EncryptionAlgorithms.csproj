@@ -41,18 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cocnrete\Hill.cs" />
-    <Compile Include="Cocnrete\AutoKey.cs" />
+    <Compile Include="Concrete\Hill.cs" />
+    <Compile Include="Concrete\AutoKey.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="Entities\Enumerations.cs" />
-    <Compile Include="Cocnrete\Ceaser.cs" />
-    <Compile Include="Cocnrete\PlayFair.cs" />
+    <Compile Include="Concrete\Ceaser.cs" />
+    <Compile Include="Concrete\PlayFair.cs" />
     <Compile Include="Entities\MatrixClass.cs" />
-    <Compile Include="Cocnrete\Monoalphabetic.cs" />
+    <Compile Include="Concrete\Monoalphabetic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Cocnrete\RailFence.cs" />
-    <Compile Include="Cocnrete\Vigenere.cs" />
-    <Compile Include="Cocnrete\RowTransposition.cs" />
+    <Compile Include="Concrete\RailFence.cs" />
+    <Compile Include="Concrete\Vigenere.cs" />
+    <Compile Include="Concrete\RowTransposition.cs" />
     <Compile Include="Abstract\SecurityAlgorithm.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
