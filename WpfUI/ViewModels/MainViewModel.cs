@@ -127,12 +127,12 @@ namespace WpfUI
 
         void EncryptExecute()
         {
-            ProcessedMessage = _selectedAlgorithm.SecurityAlgorithm.Encrypt(Message);
+            ProcessedMessage = _selectedAlgorithm.SecurityAlgorithm.Encrypt(Message.ToLower());
         }
 
         void DecryptExecute()
         {
-            ProcessedMessage = _selectedAlgorithm.SecurityAlgorithm.Decrypt(Message);
+            ProcessedMessage = _selectedAlgorithm.SecurityAlgorithm.Decrypt(Message.ToLower());
         }
 
         void ShowMatrixFormExecute()
